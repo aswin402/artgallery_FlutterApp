@@ -6,7 +6,7 @@ class AppText {
   static TextStyle h1(BuildContext context) {
     return GoogleFonts.outfit(
       fontSize: 32,
-      fontWeight: FontWeight.w700,
+      fontWeight: FontWeight.w500,
       color: Theme.of(context).colorScheme.onSurface,
     );
   }
@@ -15,7 +15,16 @@ class AppText {
   static TextStyle h2(BuildContext context) {
     return GoogleFonts.outfit(
       fontSize: 24,
-      fontWeight: FontWeight.w600,
+      fontWeight: FontWeight.w400,
+      color: Theme.of(context).colorScheme.onSurface,
+    );
+  }
+
+    // H3 – Section titles
+  static TextStyle h3(BuildContext context) {
+    return GoogleFonts.outfit(
+      fontSize: 24,
+      fontWeight: FontWeight.w200,
       color: Theme.of(context).colorScheme.onSurface,
     );
   }

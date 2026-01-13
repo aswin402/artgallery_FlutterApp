@@ -1,6 +1,7 @@
-import 'package:artgallery/app/app_shell.dart';
-import 'package:artgallery/core/theme/app_theme.dart';
-import 'package:artgallery/pages/home/home_page.dart';
+import '/app/app_shell.dart';
+import '/core/theme/app_theme.dart';
+import '/core/theme/theme_controller.dart';
+import '/pages/home/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,17 +11,20 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Art Gallery',
-      theme: AppTheme.dark,
-      darkTheme: AppTheme.dark,
-      themeMode: ThemeMode.system,
-      home: const AppShell(child: HomePage(),)
+    return ValueListenableBuilder<ThemeMode>(
+      valueListenable: ThemeController.themeMode,
+      builder: (_, mode, _) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Art Gallery',
+          theme: AppTheme.light,
+          darkTheme: AppTheme.dark,
+          themeMode: mode,
+          home: const AppShell(child: HomePage()),
+        );
+      },
     );
   }
 }
-
