@@ -17,11 +17,12 @@ class AppTokens extends ThemeExtension<AppTokens> {
   final Color destructive;
   final Color ring;
   final Color input;
+  final Color inputField;
   final Color button;
   final Color buttonbg;
   final Color secondarybutton;
   final Color secondarybuttonbg;
-
+  final Color fontcolor;
 
   const AppTokens({
     required this.background,
@@ -39,10 +40,12 @@ class AppTokens extends ThemeExtension<AppTokens> {
     required this.destructive,
     required this.ring,
     required this.input,
+    required this.inputField,
     required this.button,
     required this.buttonbg,
     required this.secondarybutton,
-    required this.secondarybuttonbg
+    required this.secondarybuttonbg,
+    required this.fontcolor,
   });
 
   @override
@@ -62,10 +65,12 @@ class AppTokens extends ThemeExtension<AppTokens> {
     Color? destructive,
     Color? ring,
     Color? input,
+    Color? inputField,
     Color? button,
     Color? buttonbg,
     Color? secondarybutton,
-    Color? secondarybuttonbg
+    Color? secondarybuttonbg,
+    Color? fontcolor
   }) {
     return AppTokens(
       background: background ?? this.background,
@@ -83,10 +88,12 @@ class AppTokens extends ThemeExtension<AppTokens> {
       destructive: destructive ?? this.destructive,
       ring: ring ?? this.ring,
       input: input ?? this.input,
+      inputField: inputField ?? this.inputField,
       button: button ?? this.button,
       buttonbg: buttonbg ?? this.buttonbg,
       secondarybutton: secondarybutton ?? this.secondarybutton,
-      secondarybuttonbg: secondarybuttonbg ?? this.secondarybuttonbg
+      secondarybuttonbg: secondarybuttonbg ?? this.secondarybuttonbg,
+      fontcolor: fontcolor ?? this.fontcolor,
     );
   }
 
@@ -97,8 +104,16 @@ class AppTokens extends ThemeExtension<AppTokens> {
       background: Color.lerp(background, other.background, t)!,
       foreground: Color.lerp(foreground, other.foreground, t)!,
       navbar: Color.lerp(navbar, other.navbar, t)!,
-      themeToggleButton: Color.lerp(themeToggleButton, other.themeToggleButton, t)!,
-      themeToggleButtonbg: Color.lerp(themeToggleButtonbg, other.themeToggleButtonbg, t)!,
+      themeToggleButton: Color.lerp(
+        themeToggleButton,
+        other.themeToggleButton,
+        t,
+      )!,
+      themeToggleButtonbg: Color.lerp(
+        themeToggleButtonbg,
+        other.themeToggleButtonbg,
+        t,
+      )!,
       card: Color.lerp(card, other.card, t)!,
       cardForeground: Color.lerp(cardForeground, other.cardForeground, t)!,
       border: Color.lerp(border, other.border, t)!,
@@ -109,10 +124,16 @@ class AppTokens extends ThemeExtension<AppTokens> {
       destructive: Color.lerp(destructive, other.destructive, t)!,
       ring: Color.lerp(ring, other.ring, t)!,
       input: Color.lerp(input, other.input, t)!,
+      inputField: Color.lerp(inputField, other.inputField, t)!,
       button: Color.lerp(button, other.button, t)!,
       buttonbg: Color.lerp(buttonbg, other.buttonbg, t)!,
       secondarybutton: Color.lerp(secondarybutton, other.secondarybutton, t)!,
-      secondarybuttonbg: Color.lerp(secondarybuttonbg, other.secondarybuttonbg, t)!
+      secondarybuttonbg: Color.lerp(
+        secondarybuttonbg,
+        other.secondarybuttonbg,
+        t,
+      )!,
+      fontcolor: Color.lerp(fontcolor, other.fontcolor, t)!
     );
   }
 }

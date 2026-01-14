@@ -95,7 +95,7 @@ class PrimaryButton extends StatelessWidget {
     super.key,
     required this.text,
     required this.onPressed,
-     this.width,
+    this.width,
     this.height,
     this.padding,
   });
@@ -108,7 +108,10 @@ class PrimaryButton extends StatelessWidget {
         backgroundColor: context.colors.buttonbg,
         foregroundColor: context.colors.button,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(16),
+            bottom: Radius.circular(16)
+            ),
         ),
         minimumSize: Size.zero,
         padding: padding ?? const EdgeInsets.symmetric(horizontal: 20, vertical: 14),

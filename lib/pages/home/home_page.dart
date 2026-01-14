@@ -1,3 +1,4 @@
+import '../../core/widgets/app_footer.dart';
 import 'hero_section.dart';
 import 'package:flutter/material.dart';
 import 'features_section.dart';
@@ -12,6 +13,7 @@ class HomePage extends StatelessWidget {
       children: [
         HeroSection(),
         FeaturesSection(),
+        AppFooter(),
       ],
      ),
     );

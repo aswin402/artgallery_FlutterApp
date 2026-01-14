@@ -1,3 +1,4 @@
+import 'package:artgallery/core/theme/theme_x.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -7,7 +8,7 @@ class AppText {
     return GoogleFonts.outfit(
       fontSize: 32,
       fontWeight: FontWeight.w500,
-      color: Theme.of(context).colorScheme.onSurface,
+      color: context.colors.fontcolor,
     );
   }
 
@@ -16,7 +17,7 @@ class AppText {
     return GoogleFonts.outfit(
       fontSize: 24,
       fontWeight: FontWeight.w500,
-      color: Theme.of(context).colorScheme.onSurface,
+      color: context.colors.fontcolor,
     );
   }
 
@@ -24,8 +25,8 @@ class AppText {
   static TextStyle h2(BuildContext context) {
     return GoogleFonts.outfit(
       fontSize: 24,
-      fontWeight: FontWeight.w400,
-      color: Theme.of(context).colorScheme.onSurface,
+      fontWeight: FontWeight.w500,
+      color: context.colors.fontcolor,
     );
   }
 
@@ -34,7 +35,7 @@ class AppText {
     return GoogleFonts.outfit(
       fontSize: 24,
       fontWeight: FontWeight.w200,
-      color: Theme.of(context).colorScheme.onSurface,
+      color: context.colors.fontcolor,
     );
   }
 

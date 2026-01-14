@@ -26,6 +26,7 @@ class AppTheme {
         destructive: LightTokens.accent,
         ring: LightTokens.ring,
         input: LightTokens.input,
+        inputField: LightTokens.inputField,
         card: LightTokens.card,
         cardForeground: LightTokens.cardForeground,
         navbar: LightTokens.navbar,
@@ -37,7 +38,8 @@ class AppTheme {
         button: LightTokens.button,
         buttonbg: LightTokens.buttonBg,
         secondarybutton: LightTokens.secondaryButton,
-        secondarybuttonbg: LightTokens.secondaryButtonBg
+        secondarybuttonbg: LightTokens.secondaryButtonBg,
+        fontcolor: LightTokens.fontcolor,
       ),
     ],
 
@@ -75,6 +77,7 @@ class AppTheme {
         destructive: DarkTokens.destructive,
         ring: DarkTokens.ring,
         input: DarkTokens.input,
+        inputField: DarkTokens.inputField,
         card: DarkTokens.card,
         cardForeground: DarkTokens.cardForeground,
         navbar: DarkTokens.navbar,
@@ -86,7 +89,8 @@ class AppTheme {
         button: DarkTokens.button,
         buttonbg: DarkTokens.buttonBg,
         secondarybutton: DarkTokens.secondaryButton,
-        secondarybuttonbg: DarkTokens.secondaryButtonBg
+        secondarybuttonbg: DarkTokens.secondaryButtonBg,
+        fontcolor: DarkTokens.fontcolor,
       ),
     ],
 

@@ -26,18 +26,22 @@ class LightTokens {
   static const destructiveForeground = Color(0xFFFEF2F2);
 
   static const border = Color.fromARGB(255, 0, 0, 0);
-  static const input = Color(0xFFE2E8F0);
+  static const input = Color.fromARGB(255, 58, 58, 58);
+  static const inputField = Color(0xFFE5E7EB);
   static const ring = Color(0xFF2FC2A5);
 
   static const navbar = Color(0xFFF1F5F9); // sidebar / navbar
   static const themeToggleButton = Color.fromARGB(255, 0, 0, 0);
   static const themeToggleButtonbg = Color.fromARGB(255, 255, 255, 255);
 
-  //button 
-  static const button = Color(0xFF2FC2A5);
-  static const buttonBg = Color.fromARGB(255, 0, 0, 0);
+  //button
+  static const button = Color.fromARGB(255, 0, 0, 0);
+  static const buttonBg = Color(0xFF2FC2A5);
   static const secondaryButton = Color(0xFFE2E8F0);
   static const secondaryButtonBg = Color.fromARGB(255, 13, 13, 13);
+  
+  //font
+  static const fontcolor = Color.fromARGB(255, 0, 0, 0); 
 }
 
 class DarkTokens {
@@ -66,7 +70,8 @@ class DarkTokens {
   static const destructiveForeground = Color(0xFF450A0A);
 
   static const border = Color.fromARGB(255, 19, 19, 19);
-  static const input = Color(0xFF1E293B);
+  static const input = Color.fromARGB(255, 88, 87, 87);
+  static const inputField = Color.fromARGB(255, 30, 30, 30);
   static const ring = Color(0xFF5EEAD4);
 
   static const navbar = Color.fromARGB(255, 0, 0, 0);
@@ -77,5 +82,8 @@ class DarkTokens {
   static const button = Color.fromARGB(255, 13, 13, 13);
   static const buttonBg = Color(0xFF2FC2A5);
   static const secondaryButton = Color.fromARGB(255, 255, 255, 255);
-  static const secondaryButtonBg= Color.fromARGB(255, 23, 23, 24);
+  static const secondaryButtonBg = Color.fromARGB(255, 23, 23, 24);
+
+  //font
+   static const fontcolor = Color.fromARGB(255, 246, 247, 248); 
 }
