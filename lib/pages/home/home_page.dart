@@ -1,5 +1,6 @@
-import 'package:artgallery/pages/home/hero_section.dart';
+import 'hero_section.dart';
 import 'package:flutter/material.dart';
+import 'features_section.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -10,6 +11,7 @@ class HomePage extends StatelessWidget {
      child: Column(
       children: [
         HeroSection(),
+        FeaturesSection(),
       ],
      ),
     );

@@ -1,3 +1,4 @@
+import 'package:artgallery/core/theme/app_text.dart';
 import 'package:flutter/material.dart';
 import '../theme/theme_x.dart';
 
@@ -71,7 +72,7 @@ class AppButton extends StatelessWidget {
             padding: const EdgeInsets.only(right: 8),
             child: Icon(leadingIcon, size: size, color: color),
           ),
-        Text(text),
+        Text(text , style: AppText.btnMuted(context)),
         if (hasTrailing)
           Padding(
             padding: const EdgeInsets.only(left: 8),
@@ -112,7 +113,7 @@ class PrimaryButton extends StatelessWidget {
         minimumSize: Size.zero,
         padding: padding ?? const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
       ),
-     child: Text(text),
+     child: Text(text, style: AppText.btnText(context)),
     );
 
     if (width != null || height != null) {
@@ -201,7 +202,7 @@ Widget buildChild(BuildContext context) {
             padding: const EdgeInsets.only(right: 8),
             child: Icon(leadingIcon, size: size, color: color),
           ),
-        Text(text),
+        Text(text , style: AppText.btnText(context),),
         if (hasTrailing)
           Padding(
             padding: const EdgeInsets.only(left: 8),
@@ -245,7 +246,7 @@ class ThirdButton extends StatelessWidget {
         minimumSize: Size.zero,
         padding: padding ?? const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
       ),
-      child: Text(text),
+      child: Text(text , style: AppText.btnText(context),),
     );
 
     if (width != null || height != null) {

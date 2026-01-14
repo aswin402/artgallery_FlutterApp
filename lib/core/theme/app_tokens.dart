@@ -8,6 +8,7 @@ class AppTokens extends ThemeExtension<AppTokens> {
   final Color themeToggleButton;
   final Color themeToggleButtonbg;
   final Color card;
+  final Color cardForeground;
   final Color border;
   final Color primary;
   final Color secondary;
@@ -29,6 +30,7 @@ class AppTokens extends ThemeExtension<AppTokens> {
     required this.themeToggleButton,
     required this.themeToggleButtonbg,
     required this.card,
+    required this.cardForeground,
     required this.border,
     required this.primary,
     required this.secondary,
@@ -51,6 +53,7 @@ class AppTokens extends ThemeExtension<AppTokens> {
     Color? themeToggleButton,
     Color? themeToggleButtonbg,
     Color? card,
+    Color? cardForeground,
     Color? border,
     Color? primary,
     Color? secondary,
@@ -71,6 +74,7 @@ class AppTokens extends ThemeExtension<AppTokens> {
       themeToggleButton: themeToggleButton ?? this.themeToggleButton,
       themeToggleButtonbg: themeToggleButtonbg ?? this.themeToggleButtonbg,
       card: card ?? this.card,
+      cardForeground: cardForeground ?? this.cardForeground,
       border: border ?? this.border,
       primary: primary ?? this.primary,
       secondary: secondary ?? this.secondary,
@@ -96,6 +100,7 @@ class AppTokens extends ThemeExtension<AppTokens> {
       themeToggleButton: Color.lerp(themeToggleButton, other.themeToggleButton, t)!,
       themeToggleButtonbg: Color.lerp(themeToggleButtonbg, other.themeToggleButtonbg, t)!,
       card: Color.lerp(card, other.card, t)!,
+      cardForeground: Color.lerp(cardForeground, other.cardForeground, t)!,
       border: Color.lerp(border, other.border, t)!,
       primary: Color.lerp(primary, other.primary, t)!,
       secondary: Color.lerp(secondary, other.secondary, t)!,

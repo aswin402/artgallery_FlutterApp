@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class LightTokens {
   static const background = Color(0xFFF8FAFC); // bg-background
-  static const foreground = Color(0xFF0F172A); // text-foreground
+  static const foreground = Color.fromARGB(255, 30, 33, 39); // text-foreground
 
-  static const card = Color(0xFFFFFFFF);
-  static const cardForeground = Color(0xFF0F172A);
+  static const card = Color.fromARGB(255, 6, 6, 6);
+  static const cardForeground = Color.fromARGB(255, 245, 245, 247);
 
   static const popover = Color(0xFFFFFFFF);
   static const popoverForeground = Color(0xFF0F172A);
@@ -44,7 +44,7 @@ class DarkTokens {
   static const background = Color.fromARGB(255, 13, 13, 13);
   static const foreground = Color(0xFFE5E7EB);
 
-  static const card = Color(0xFF020617);
+  static const card = Color.fromARGB(255, 17, 17, 19);
   static const cardForeground = Color(0xFFE5E7EB);
 
   static const popover = Color(0xFF020617);

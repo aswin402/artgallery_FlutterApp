@@ -11,6 +11,15 @@ class AppText {
     );
   }
 
+    // H4 – card titles (Outfit)
+  static TextStyle h4(BuildContext context) {
+    return GoogleFonts.outfit(
+      fontSize: 24,
+      fontWeight: FontWeight.w500,
+      color: Theme.of(context).colorScheme.onSurface,
+    );
+  }
+
   // H2 – Section titles
   static TextStyle h2(BuildContext context) {
     return GoogleFonts.outfit(
@@ -55,4 +64,24 @@ class AppText {
       color: Theme.of(context).colorScheme.onSurface,
     );
   }
+
+
+   // btnText – Main content (Geist)
+  static TextStyle btnText(BuildContext context) {
+    return GoogleFonts.geist(
+      fontSize: 16,
+      fontWeight: FontWeight.w400,
+    );
+  }
+
+  // btnMuted – Secondary text
+  static TextStyle btnMuted(BuildContext context) {
+    return GoogleFonts.geist(
+      fontSize: 14,
+      fontWeight: FontWeight.w400,
+    );
+  }
+
 }
+
+

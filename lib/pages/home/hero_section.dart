@@ -10,16 +10,19 @@ class HeroSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-       margin: EdgeInsets.symmetric(vertical: 160),
-       height: 900,
+       margin: EdgeInsets.only(top: 160),
+       height: 300,
+       width: double.infinity,
        color: context.colors.background,
        child: Center(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
                Padding(
                  padding: const EdgeInsets.all(16),
                  child: Text(
                   'Art Gallery Discover Arts & Selling place',
+                  textAlign: TextAlign.center,
                   style: AppText.h1(context),
                               ),
                ),
@@ -30,6 +33,7 @@ class HeroSection extends StatelessWidget {
               padding: const EdgeInsets.all(20),
               child: Text(
                 'Explore a collection of Arts, ready to preview and buy the Arts. Publish your Arts on ArtGallery and sell you Arts.',
+                 textAlign: TextAlign.center,
                 style: AppText.body(context),
               ),
             ),
