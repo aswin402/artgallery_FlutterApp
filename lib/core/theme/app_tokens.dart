@@ -13,6 +13,7 @@ class AppTokens extends ThemeExtension<AppTokens> {
   final Color primary;
   final Color secondary;
   final Color muted;
+  final Color mutedForeground;
   final Color accent;
   final Color destructive;
   final Color ring;
@@ -36,6 +37,7 @@ class AppTokens extends ThemeExtension<AppTokens> {
     required this.primary,
     required this.secondary,
     required this.muted,
+    required this.mutedForeground,
     required this.accent,
     required this.destructive,
     required this.ring,
@@ -61,6 +63,7 @@ class AppTokens extends ThemeExtension<AppTokens> {
     Color? primary,
     Color? secondary,
     Color? muted,
+    Color? mutedForeground,
     Color? accent,
     Color? destructive,
     Color? ring,
@@ -84,6 +87,7 @@ class AppTokens extends ThemeExtension<AppTokens> {
       primary: primary ?? this.primary,
       secondary: secondary ?? this.secondary,
       muted: muted ?? this.muted,
+      mutedForeground: mutedForeground ?? this.mutedForeground,
       accent: accent ?? this.accent,
       destructive: destructive ?? this.destructive,
       ring: ring ?? this.ring,
@@ -120,6 +124,7 @@ class AppTokens extends ThemeExtension<AppTokens> {
       primary: Color.lerp(primary, other.primary, t)!,
       secondary: Color.lerp(secondary, other.secondary, t)!,
       muted: Color.lerp(muted, other.muted, t)!,
+      mutedForeground: Color.lerp(mutedForeground, other.mutedForeground, t)!,
       accent: Color.lerp(accent, other.accent, t)!,
       destructive: Color.lerp(destructive, other.destructive, t)!,
       ring: Color.lerp(ring, other.ring, t)!,

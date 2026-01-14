@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../core/widgets/app_footer.dart';
 import '../core/widgets/app_navbar.dart';
 
 class AppShell extends StatelessWidget {
@@ -12,7 +13,17 @@ class AppShell extends StatelessWidget {
       body: Column(
         children: [
           const AppTopNavbar(),
-          Expanded(child: child),
+Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  child,
+                  const SizedBox(height: 80),
+                  const AppFooter(),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );

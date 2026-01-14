@@ -4,6 +4,8 @@ import '/core/theme/theme_controller.dart';
 import '/pages/home/home_page.dart';
 import 'package:flutter/material.dart';
 
+import 'pages/about/about_page.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
           theme: AppTheme.light,
           darkTheme: AppTheme.dark,
           themeMode: mode,
-          home: const AppShell(child: HomePage()),
+          home: const AppShell(child: AboutPage()),
         );
       },
     );
