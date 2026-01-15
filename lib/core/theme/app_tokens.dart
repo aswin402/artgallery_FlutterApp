@@ -9,6 +9,8 @@ class AppTokens extends ThemeExtension<AppTokens> {
   final Color themeToggleButtonbg;
   final Color card;
   final Color cardForeground;
+  final Color cardSecondary;
+  final Color cardSecondaryForeground;
   final Color border;
   final Color primary;
   final Color secondary;
@@ -33,6 +35,8 @@ class AppTokens extends ThemeExtension<AppTokens> {
     required this.themeToggleButtonbg,
     required this.card,
     required this.cardForeground,
+    required this.cardSecondary,
+    required this.cardSecondaryForeground,
     required this.border,
     required this.primary,
     required this.secondary,
@@ -59,6 +63,8 @@ class AppTokens extends ThemeExtension<AppTokens> {
     Color? themeToggleButtonbg,
     Color? card,
     Color? cardForeground,
+    Color? cardSecondary,
+    Color? cardSecondaryForeground,
     Color? border,
     Color? primary,
     Color? secondary,
@@ -73,7 +79,7 @@ class AppTokens extends ThemeExtension<AppTokens> {
     Color? buttonbg,
     Color? secondarybutton,
     Color? secondarybuttonbg,
-    Color? fontcolor
+    Color? fontcolor,
   }) {
     return AppTokens(
       background: background ?? this.background,
@@ -83,6 +89,8 @@ class AppTokens extends ThemeExtension<AppTokens> {
       themeToggleButtonbg: themeToggleButtonbg ?? this.themeToggleButtonbg,
       card: card ?? this.card,
       cardForeground: cardForeground ?? this.cardForeground,
+      cardSecondary: cardSecondary ?? this.cardSecondary,
+      cardSecondaryForeground: cardSecondaryForeground ?? this.cardSecondaryForeground,
       border: border ?? this.border,
       primary: primary ?? this.primary,
       secondary: secondary ?? this.secondary,
@@ -120,6 +128,12 @@ class AppTokens extends ThemeExtension<AppTokens> {
       )!,
       card: Color.lerp(card, other.card, t)!,
       cardForeground: Color.lerp(cardForeground, other.cardForeground, t)!,
+      cardSecondary: Color.lerp(cardSecondary, other.cardSecondary, t)!,
+      cardSecondaryForeground: Color.lerp(
+        cardSecondaryForeground,
+        other.cardSecondaryForeground,
+        t,
+      )!,
       border: Color.lerp(border, other.border, t)!,
       primary: Color.lerp(primary, other.primary, t)!,
       secondary: Color.lerp(secondary, other.secondary, t)!,
@@ -138,7 +152,7 @@ class AppTokens extends ThemeExtension<AppTokens> {
         other.secondarybuttonbg,
         t,
       )!,
-      fontcolor: Color.lerp(fontcolor, other.fontcolor, t)!
+      fontcolor: Color.lerp(fontcolor, other.fontcolor, t)!,
     );
   }
 }

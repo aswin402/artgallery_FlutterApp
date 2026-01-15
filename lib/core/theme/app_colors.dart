@@ -6,7 +6,8 @@ class LightTokens {
 
   static const card = Color.fromARGB(255, 6, 6, 6);
   static const cardForeground = Color.fromARGB(255, 245, 245, 247);
-
+  static const cardSecondary = Color.fromARGB(255, 6, 6, 6);
+  static const cardSecondaryForeground = Color.fromARGB(255, 245, 245, 247);
   static const popover = Color(0xFFFFFFFF);
   static const popoverForeground = Color(0xFF0F172A);
 
@@ -50,7 +51,8 @@ class DarkTokens {
 
   static const card = Color.fromARGB(255, 17, 17, 19);
   static const cardForeground = Color(0xFFE5E7EB);
-
+  static const cardSecondary = Color.fromARGB(255, 24, 24, 24);
+  static const cardSecondaryForeground = Color.fromARGB(255, 245, 245, 247);
   static const popover = Color(0xFF020617);
   static const popoverForeground = Color(0xFFE5E7EB);
 

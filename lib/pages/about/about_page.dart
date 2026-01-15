@@ -1,3 +1,4 @@
+import 'package:artgallery/pages/about/principles_section.dart';
 import 'package:flutter/material.dart';
 import 'hero_section.dart';
 
@@ -10,6 +11,7 @@ class AboutPage extends StatelessWidget {
       child: Column(
         children: [
           AboutHeroSection(),
+          PrinciplesSection(),
         ],
       ),
     );
