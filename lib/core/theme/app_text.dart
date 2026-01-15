@@ -57,6 +57,14 @@ class AppText {
     );
   }
 
+    static TextStyle small(BuildContext context) {
+    return GoogleFonts.geist(
+      fontSize: 12,
+      fontWeight: FontWeight.w400,
+      color: Theme.of(context).colorScheme.onSurfaceVariant,
+    );
+  }
+
   // Mono – Prices, IDs (Geist Mono)
   static TextStyle mono(BuildContext context) {
     return GoogleFonts.geistMono(

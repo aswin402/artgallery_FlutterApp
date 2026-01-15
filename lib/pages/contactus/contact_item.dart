@@ -41,14 +41,14 @@ class ContactItem extends StatelessWidget {
         Text(
           description,
           style:  AppText.muted(context).copyWith(
-            color: context.colors.muted,
+            color: context.colors.fontcolorprimary,
           ),
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: 6),
         Text(
           value,
-          style:  AppText.body(context).copyWith(
+          style:  AppText.small(context).copyWith(
             color: context.colors.primary,
           ),
           textAlign: TextAlign.center,

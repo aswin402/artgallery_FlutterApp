@@ -43,6 +43,8 @@ class LightTokens {
   
   //font
   static const fontcolor = Color.fromARGB(255, 0, 0, 0); 
+  static const fontcolorprimary = Color.fromARGB(255, 25, 25, 25); 
+  static const fontcolorsecondary = Color.fromARGB(255, 227, 230, 230); 
 }
 
 class DarkTokens {
@@ -87,5 +89,7 @@ class DarkTokens {
   static const secondaryButtonBg = Color.fromARGB(255, 23, 23, 24);
 
   //font
-   static const fontcolor = Color.fromARGB(255, 246, 247, 248); 
+  static const fontcolor = Color.fromARGB(255, 246, 247, 248); 
+  static const fontcolorprimary = Color.fromARGB(255, 157, 157, 157); 
+  static const fontcolorsecondary = Color.fromARGB(255, 227, 230, 230); 
 }

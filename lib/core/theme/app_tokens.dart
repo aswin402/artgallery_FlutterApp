@@ -26,6 +26,8 @@ class AppTokens extends ThemeExtension<AppTokens> {
   final Color secondarybutton;
   final Color secondarybuttonbg;
   final Color fontcolor;
+  final Color fontcolorprimary;
+  final Color fontcolorsecondary;
 
   const AppTokens({
     required this.background,
@@ -52,6 +54,8 @@ class AppTokens extends ThemeExtension<AppTokens> {
     required this.secondarybutton,
     required this.secondarybuttonbg,
     required this.fontcolor,
+    required this.fontcolorprimary,
+    required this.fontcolorsecondary,
   });
 
   @override
@@ -80,6 +84,8 @@ class AppTokens extends ThemeExtension<AppTokens> {
     Color? secondarybutton,
     Color? secondarybuttonbg,
     Color? fontcolor,
+    Color? fontcolorprimary,
+    Color? fontcolorsecondary,
   }) {
     return AppTokens(
       background: background ?? this.background,
@@ -106,6 +112,8 @@ class AppTokens extends ThemeExtension<AppTokens> {
       secondarybutton: secondarybutton ?? this.secondarybutton,
       secondarybuttonbg: secondarybuttonbg ?? this.secondarybuttonbg,
       fontcolor: fontcolor ?? this.fontcolor,
+      fontcolorprimary: fontcolorprimary ?? this.fontcolorprimary,
+      fontcolorsecondary: fontcolorsecondary ?? this.fontcolorsecondary,
     );
   }
 
@@ -153,6 +161,12 @@ class AppTokens extends ThemeExtension<AppTokens> {
         t,
       )!,
       fontcolor: Color.lerp(fontcolor, other.fontcolor, t)!,
+      fontcolorprimary: Color.lerp(fontcolorprimary, other.fontcolorprimary, t)!,
+      fontcolorsecondary: Color.lerp(
+        fontcolorsecondary,
+        other.fontcolorsecondary,
+        t,
+      )!,
     );
   }
 }

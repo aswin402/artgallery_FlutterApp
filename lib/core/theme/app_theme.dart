@@ -43,6 +43,8 @@ class AppTheme {
         secondarybutton: LightTokens.secondaryButton,
         secondarybuttonbg: LightTokens.secondaryButtonBg,
         fontcolor: LightTokens.fontcolor,
+        fontcolorprimary: LightTokens.fontcolorprimary,
+        fontcolorsecondary: LightTokens.fontcolorsecondary,
       ),
     ],
 
@@ -97,6 +99,8 @@ class AppTheme {
         secondarybutton: DarkTokens.secondaryButton,
         secondarybuttonbg: DarkTokens.secondaryButtonBg,
         fontcolor: DarkTokens.fontcolor,
+        fontcolorprimary: DarkTokens.fontcolorprimary,
+        fontcolorsecondary: DarkTokens.fontcolorsecondary,
       ),
     ],
 

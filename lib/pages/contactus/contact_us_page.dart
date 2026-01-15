@@ -14,7 +14,7 @@ class ContactUsPage extends StatelessWidget {
                Text(
                 "CONTACT US",
                 style: AppText.muted(context).copyWith(
-                  color: context.colors.muted,
+                  color: context.colors.fontcolorprimary,
                   letterSpacing: 2,
                 ),
               ),
@@ -29,7 +29,7 @@ class ContactUsPage extends StatelessWidget {
                Text(
                 "Our friendly team is always here to chat.",
                 style: AppText.muted(context).copyWith(
-                  color: context.colors.muted,
+                  color: context.colors.fontcolorprimary,
                 ),
                 textAlign: TextAlign.center,
               ),
