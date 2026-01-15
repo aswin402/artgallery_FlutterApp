@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../core/theme/app_text.dart';
 import '../../core/theme/theme_x.dart';
-import '../../core/widgets/app_card.dart';
+import '../../core/widgets/principle_card.dart';
+
 
 
 class PrinciplesSection extends StatelessWidget {

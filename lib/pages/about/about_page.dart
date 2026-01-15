@@ -1,4 +1,5 @@
 import 'package:artgallery/pages/about/principles_section.dart';
+import 'package:artgallery/pages/about/team_section.dart';
 import 'package:flutter/material.dart';
 import 'hero_section.dart';
 
@@ -12,6 +13,7 @@ class AboutPage extends StatelessWidget {
         children: [
           AboutHeroSection(),
           PrinciplesSection(),
+          TeamSection(),
         ],
       ),
     );
