@@ -14,10 +14,10 @@ class LightTokens {
   static const primary = Color(0xFF2FC2A5); // teal-blue
   static const primaryForeground = Color(0xFFEFFDFC);
 
-  static const secondary = Color(0xFFF1F5F9);
+  static const secondary = Color.fromARGB(255, 25, 25, 25);
   static const secondaryForeground = Color(0xFF1E293B);
 
-  static const muted = Color.fromARGB(255, 210, 212, 215);
+  static const muted = Color.fromARGB(255, 66, 67, 68);
   static const mutedForeground = Color.fromARGB(255, 27, 28, 29);
 
   static const accent = Color(0xFFEFF6FF);
@@ -59,10 +59,10 @@ class DarkTokens {
   static const primary = Color(0xFF5EEAD4);
   static const primaryForeground = Color(0xFF042F2E);
 
-  static const secondary = Color(0xFF020617);
+  static const secondary = Color.fromARGB(255, 8, 39, 33);
   static const secondaryForeground = Color.fromARGB(255, 124, 124, 125);
 
-  static const muted = Color.fromARGB(255, 39, 39, 41);
+  static const muted = Color.fromARGB(255, 67, 67, 67);
   static const mutedForeground = Color.fromARGB(255, 105, 107, 109);
 
   static const accent = Color(0xFF020617);
