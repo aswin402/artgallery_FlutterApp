@@ -11,9 +11,10 @@ class ContactUsPage extends StatelessWidget {
     return  Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              const SizedBox(height: 60),
                Text(
                 "CONTACT US",
-                style: AppText.muted(context).copyWith(
+                style: AppText.body(context).copyWith(
                   color: context.colors.fontcolorprimary,
                   letterSpacing: 2,
                 ),

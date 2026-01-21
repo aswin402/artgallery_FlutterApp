@@ -5,7 +5,7 @@ class LightTokens {
   static const foreground = Color.fromARGB(255, 30, 33, 39); // text-foreground
 
   static const card = Color.fromARGB(255, 231, 235, 234);
-  static const cardForeground = Color.fromARGB(255, 245, 245, 247);
+  static const cardForeground = Color.fromARGB(255, 22, 22, 22);
   static const cardSecondary = Color.fromARGB(255, 24, 24, 24);
   static const cardSecondaryForeground = Color.fromARGB(255, 245, 245, 247);
   static const popover = Color(0xFFFFFFFF);

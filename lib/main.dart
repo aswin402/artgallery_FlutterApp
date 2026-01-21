@@ -1,4 +1,5 @@
 import 'package:artgallery/pages/art/art_list_page.dart';
+import 'package:artgallery/pages/inventory_page/art_inventory_page.dart';
 import 'package:artgallery/pages/publisharts/publish_art_page.dart';
 import '/app/app_shell.dart';
 import '/core/theme/app_theme.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
           theme: AppTheme.light,
           darkTheme: AppTheme.dark,
           themeMode: mode,
-          home: const AppShell(child: PublishArtPage()),
+          home: const AppShell(child: ArtInventoryPage()),
         );
       },
     );

@@ -48,4 +48,17 @@ class Art {
       "imageUrl": imageUrl,
     };
   }
+   Art copyWith({
+    int? id,
+    String? artname,
+    String? artist,
+    int? price,
+  }) {
+    return Art(
+      id: id ?? this.id,
+      artname: artname ?? this.artname,
+      artist: artist ?? this.artist,
+      price: price ?? this.price,
+    );
+  }
 }
