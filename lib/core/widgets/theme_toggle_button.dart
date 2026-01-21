@@ -18,7 +18,7 @@ class ThemeToggleButton extends StatelessWidget {
             transitionBuilder: (child, animation) =>
                 RotationTransition(turns: animation, child: child),
             child: Icon(
-              isDark ? Icons.dark_mode : Icons.light_mode,
+              isDark ? Icons.light_mode : Icons.dark_mode,
               key: ValueKey(isDark),
             ),
           ),

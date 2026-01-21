@@ -6,7 +6,7 @@ import '../models/art.dart';
 
 class ArtService {
   static final String baseUrl = Env.apiUrl;
-  static final String apiUrl = Env.apiUrl;
+
 
   /// GET all arts
   static Future<List<Art>> getAllArts() async {
@@ -24,7 +24,7 @@ class ArtService {
       debugPrint('API error in getAllArts: $error');
       rethrow;
     } finally {
-      debugPrint('API URL: $apiUrl/art');
+      debugPrint('API URL: $baseUrl/art');
     }
   }
 
@@ -40,7 +40,7 @@ class ArtService {
       debugPrint('API error in getArtById: $e');
       rethrow;
     } finally {
-      debugPrint('API URL: $apiUrl/art/$id');
+      debugPrint('API URL: $baseUrl/art/$id');
     }
   }
 
@@ -56,7 +56,7 @@ class ArtService {
       debugPrint('API error in deleteArt: $e');
       rethrow;
     } finally {
-      debugPrint('API URL: $apiUrl/art/$id');
+      debugPrint('API URL: $baseUrl/art/$id');
     }
   }
 
@@ -76,7 +76,7 @@ class ArtService {
       debugPrint('API error in updateArt: $e');
       rethrow;
     } finally {
-      debugPrint('API URL: $apiUrl/art/${art.id}');
+      debugPrint('API URL: $baseUrl/art/${art.id}');
     }
   }
 }

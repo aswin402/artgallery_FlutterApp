@@ -4,7 +4,7 @@ class LightTokens {
   static const background = Color(0xFFF8FAFC); // bg-background
   static const foreground = Color.fromARGB(255, 30, 33, 39); // text-foreground
 
-  static const card = Color.fromARGB(255, 6, 6, 6);
+  static const card = Color.fromARGB(255, 231, 235, 234);
   static const cardForeground = Color.fromARGB(255, 245, 245, 247);
   static const cardSecondary = Color.fromARGB(255, 24, 24, 24);
   static const cardSecondaryForeground = Color.fromARGB(255, 245, 245, 247);
@@ -73,9 +73,9 @@ class DarkTokens {
   static const destructive = Color(0xFFEF4444);
   static const destructiveForeground = Color(0xFF450A0A);
 
-  static const border = Color.fromARGB(255, 19, 19, 19);
-  static const input = Color.fromARGB(255, 88, 87, 87);
-  static const inputField = Color.fromARGB(255, 30, 30, 30);
+  static const border = Color.fromARGB(255, 41, 41, 41);
+  static const input = Color.fromARGB(255, 228, 225, 225);
+  static const inputField = Color.fromARGB(255, 14, 13, 13);
   static const ring = Color(0xFF5EEAD4);
 
   static const navbar = Color.fromARGB(255, 0, 0, 0);
