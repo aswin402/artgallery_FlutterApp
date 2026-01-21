@@ -3,6 +3,6 @@ class Env {
 
   static const apiUrl = String.fromEnvironment(
     'API_URL',
-    defaultValue: 'http://localhost:5000',
+    defaultValue: 'https://next-js-crud-with-hono.onrender.com',
   );
 }
