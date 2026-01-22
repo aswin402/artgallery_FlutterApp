@@ -1,8 +1,6 @@
 import 'dart:io';
-import 'dart:ui';
 import 'package:artgallery/core/theme/app_text.dart';
 import 'package:artgallery/core/theme/theme_x.dart';
-import 'package:artgallery/core/widgets/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import '../../api/services/art_upload_service.dart';

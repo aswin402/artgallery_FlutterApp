@@ -1,13 +1,8 @@
-import 'package:artgallery/pages/art/art_list_page.dart';
-import 'package:artgallery/pages/inventory_page/art_inventory_page.dart';
-import 'package:artgallery/pages/publisharts/publish_art_page.dart';
-import '/app/app_shell.dart';
-import '/core/theme/app_theme.dart';
-import '/core/theme/theme_controller.dart';
-import '/pages/home/home_page.dart';
-import '/pages/contactus/contact_us_page.dart';
 import 'package:flutter/material.dart';
-import 'pages/about/about_page.dart';
+import 'core/routes/router.dart';
+import 'core/theme/app_theme.dart';
+import 'core/theme/theme_controller.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -21,13 +16,13 @@ class MyApp extends StatelessWidget {
     return ValueListenableBuilder<ThemeMode>(
       valueListenable: ThemeController.themeMode,
       builder: (_, mode, _) {
-        return MaterialApp(
+        return MaterialApp.router(
           debugShowCheckedModeBanner: false,
           title: 'Art Gallery',
           theme: AppTheme.light,
           darkTheme: AppTheme.dark,
           themeMode: mode,
-          home: const AppShell(child: ArtInventoryPage()),
+          routerConfig: appRouter,
         );
       },
     );
