@@ -13,7 +13,6 @@ class PrinciplesSection extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 60),
       width: double.infinity,
-      color: context.colors.background,
       child: Column(
         children: [
           /// Section header

@@ -62,7 +62,6 @@ class TeamSection extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.fromLTRB(10, 40, 10, 2),
       width: double.infinity,
-      color: context.colors.background,
       child: Column(
         children: [
           /// Hiring label

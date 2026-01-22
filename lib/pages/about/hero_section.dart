@@ -11,7 +11,6 @@ class AboutHeroSection extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.fromLTRB(20, 24, 20, 40),
       width: double.infinity,
-      color: context.colors.background,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -61,7 +60,9 @@ class AboutHeroSection extends StatelessWidget {
           const SizedBox(height: 24),
 
           /// Actions
-          Row(
+          Wrap(
+            spacing: 12,
+            runSpacing: 12,
             children: [
               AppButton(
                 text: 'Get Started',
@@ -70,7 +71,6 @@ class AboutHeroSection extends StatelessWidget {
                 width: 150,
                 trailingIcon: Icons.arrow_outward,
               ),
-              const SizedBox(width: 12),
               SecondaryButton(
                 text: 'Explore',
                 onPressed: () {},

@@ -4,6 +4,7 @@ import '../core/routes/app_routes.dart';
 import '../core/widgets/app_footer.dart';
 import '../core/widgets/app_navbar.dart';
 import '../core/widgets/app_side_navbar.dart';
+import '../core/widgets/dust_background.dart';
 
 class AppShell extends StatefulWidget {
   final Widget child;
@@ -37,6 +38,7 @@ class _AppShellState extends State<AppShell> {
       NavPage.inventory => AppRoutes.inventory,
     };
     context.go(route);
+    _scaffoldKey.currentState?.closeEndDrawer();
   }
 
   @override
@@ -47,32 +49,37 @@ class _AppShellState extends State<AppShell> {
     return Scaffold(
       key: _scaffoldKey,
 
-      /// RIGHT SIDE NAVBAR
+      /// RIGHT SIDE DRAWER
       endDrawer: AppSideNavbar(
         activePage: activePage,
         onNavigate: (page) => _onNavigate(context, page),
       ),
 
-      body: Column(
+      body: Stack(
         children: [
-          /// TOP NAVBAR
-          AppTopNavbar(
-            onMenuTap: () {
-              _scaffoldKey.currentState?.openEndDrawer();
-            },
-          ),
+          /// 🌌 BACKGROUND EFFECT
+          const Positioned.fill(child: DustBackground()),
 
-          /// PAGE CONTENT
-          Expanded(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  widget.child,
-                  const SizedBox(height: 80),
-                  const AppFooter(),
-                ],
+          /// APP CONTENT
+          Column(
+            children: [
+              AppTopNavbar(
+                onMenuTap: () {
+                  _scaffoldKey.currentState?.openEndDrawer();
+                },
               ),
-            ),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      widget.child,
+                      const SizedBox(height: 80),
+                      const AppFooter(),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),

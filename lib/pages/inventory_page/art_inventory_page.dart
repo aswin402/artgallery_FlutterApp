@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../api/models/art.dart';
 import '../../api/services/art_service.dart';
 import '../../core/theme/theme_x.dart';
+import '../../core/widgets/app_toast.dart';
 import '../../core/widgets/edit_art_dialog.dart';
 import '../../core/widgets/inventory_row.dart';
 import '../../core/widgets/inventory_search.dart';
@@ -40,6 +41,7 @@ class _ArtInventoryPageState extends State<ArtInventoryPage> {
     } catch (e) {
       if (!mounted) return;
       setState(() => _loading = false);
+      AppToast.error(context, 'Failed to load inventory');
     }
   }
 
@@ -119,9 +121,11 @@ class _ArtInventoryPageState extends State<ArtInventoryPage> {
           if (!mounted) return;
 
           Navigator.of(dialogContext).pop(); // ✅ SAFE
+          AppToast.success(context, 'Art updated successfully');
           _loadArts(); // refresh list
         } catch (e) {
-          debugPrint('Update failed: $e');
+          if (!mounted) return;
+          AppToast.error(context, 'Update failed: $e');
         }
       },
     ),
@@ -129,9 +133,15 @@ class _ArtInventoryPageState extends State<ArtInventoryPage> {
 },
 
                         onDelete: () async {
-                          await ArtService.deleteArt(art.id);
-                          if (!mounted) return;
-                          _loadArts();
+                          try {
+                            await ArtService.deleteArt(art.id);
+                            if (!mounted) return;
+                            AppToast.success(context, 'Art deleted successfully');
+                            _loadArts();
+                          } catch (e) {
+                            if (!mounted) return;
+                            AppToast.error(context, 'Delete failed: $e');
+                          }
                         },
                       );
                     },

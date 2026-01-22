@@ -1,6 +1,6 @@
-import 'dart:io';
 import 'package:artgallery/core/theme/app_text.dart';
 import 'package:artgallery/core/theme/theme_x.dart';
+import 'package:artgallery/core/widgets/app_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import '../../api/services/art_upload_service.dart';
@@ -20,22 +20,20 @@ class _PublishArtPageState extends State<PublishArtPage> {
   final _priceCtrl = TextEditingController();
   final _descCtrl = TextEditingController();
 
-  File? _image;
+  XFile? _image;
   bool _loading = false;
 
   Future<void> pickImage() async {
     final picker = ImagePicker();
     final picked = await picker.pickImage(source: ImageSource.gallery);
     if (picked != null) {
-      setState(() => _image = File(picked.path));
+      setState(() => _image = picked);
     }
   }
 
   Future<void> upload() async {
     if (!_formKey.currentState!.validate() || _image == null) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Fill all fields & select image')),
-      );
+      AppToast.error(context, 'Fill all fields & select image');
       return;
     }
 
@@ -50,17 +48,15 @@ class _PublishArtPageState extends State<PublishArtPage> {
         imageFile: _image!,
       );
 
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Art uploaded successfully')),
-      );
+      if (!mounted) return;
+      AppToast.success(context, 'Art uploaded successfully');
 
       Navigator.pop(context);
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(e.toString())),
-      );
+      if (!mounted) return;
+      AppToast.error(context, e.toString());
     } finally {
-      setState(() => _loading = false);
+      if (mounted) setState(() => _loading = false);
     }
   }
 
