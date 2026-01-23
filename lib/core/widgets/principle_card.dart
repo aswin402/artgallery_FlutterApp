@@ -17,6 +17,8 @@ class PrincipleCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 310,
+      height: 260,
       padding: const EdgeInsets.all(18),
       decoration: BoxDecoration(
         color: context.colors.cardSecondary,

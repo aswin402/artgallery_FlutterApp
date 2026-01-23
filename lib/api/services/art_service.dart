@@ -11,7 +11,7 @@ class ArtService {
   /// GET all arts
   static Future<List<Art>> getAllArts() async {
     try {
-      final res = await http.get(Uri.parse('$baseUrl/art'));
+      final res = await http.get(Uri.parse('$baseUrl/art')).timeout(const Duration(seconds: 10));
       if (res.statusCode < 200 || res.statusCode >= 300) {
         throw Exception('Failed to fetch arts: ${res.statusCode}');
       }
@@ -31,7 +31,7 @@ class ArtService {
   /// GET art by ID
   static Future<Art> getArtById(int id) async {
     try {
-      final res = await http.get(Uri.parse('$baseUrl/art/$id'));
+      final res = await http.get(Uri.parse('$baseUrl/art/$id')).timeout(const Duration(seconds: 10));
       if (res.statusCode < 200 || res.statusCode >= 300) {
         throw Exception('Failed to fetch art: ${res.statusCode}');
       }
@@ -47,7 +47,7 @@ class ArtService {
   /// DELETE art
   static Future<void> deleteArt(int id) async {
     try {
-      final res = await http.delete(Uri.parse('$baseUrl/art/$id'));
+      final res = await http.delete(Uri.parse('$baseUrl/art/$id')).timeout(const Duration(seconds: 10));
       if (res.statusCode < 200 || res.statusCode >= 300) {
         final data = jsonDecode(res.body);
         throw Exception(data['message'] ?? 'Delete failed: ${res.statusCode}');
@@ -67,7 +67,7 @@ class ArtService {
         Uri.parse('$baseUrl/art/${art.id}'),
         headers: {"Content-Type": "application/json"},
         body: jsonEncode(art.toJson()),
-      );
+      ).timeout(const Duration(seconds: 10));
       if (res.statusCode < 200 || res.statusCode >= 300) {
         throw Exception('Failed to update art: ${res.statusCode}');
       }

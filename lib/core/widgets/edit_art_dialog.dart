@@ -47,95 +47,97 @@ class _EditArtDialogState extends State<EditArtDialog> {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(18),
       ),
-      child: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            /// HEADER
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('Edit Art', style: AppText.h1(context)),
-                IconButton(
-                  icon: const Icon(Icons.close),
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              /// HEADER
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('Edit Art', style: AppText.h1(context)),
+                  IconButton(
+                    icon: const Icon(Icons.close),
+                    onPressed: () => Navigator.pop(context),
+                  )
+                ],
+              ),
+
+              const SizedBox(height: 16),
+
+              _input(
+                context,
+                label: 'Art Name',
+                controller: _nameCtrl,
+              ),
+              _input(
+                context,
+                label: 'Artist',
+                controller: _artistCtrl,
+              ),
+              _input(
+                context,
+                label: 'Price',
+                controller: _priceCtrl,
+                keyboardType: TextInputType.number,
+              ),
+
+              const SizedBox(height: 20),
+
+              /// DONE BUTTON
+              SizedBox(
+                width: double.infinity,
+                height: 48,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: context.colors.primary,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                  onPressed: () async {
+                    final updatedArt = widget.art.copyWith(
+                      artname: _nameCtrl.text.trim(),
+                      artist: _artistCtrl.text.trim(),
+                      price: int.parse(_priceCtrl.text),
+                    );
+
+                    await widget.onSubmit(updatedArt);
+                  },
+                  child: Text(
+                    'Done',
+                    style: AppText.btnMuted(context).copyWith(
+                      color: context.colors.background,
+                    ),
+                  ),
+                ),
+              ),
+
+              const SizedBox(height: 10),
+
+              /// CANCEL BUTTON
+              SizedBox(
+                width: double.infinity,
+                height: 48,
+                child: OutlinedButton(
+                  style: OutlinedButton.styleFrom(
+                    foregroundColor: context.colors.fontcolor,
+                    side: BorderSide(color: context.colors.border),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
                   onPressed: () => Navigator.pop(context),
-                )
-              ],
-            ),
-
-            const SizedBox(height: 16),
-
-            _input(
-              context,
-              label: 'Art Name',
-              controller: _nameCtrl,
-            ),
-            _input(
-              context,
-              label: 'Artist',
-              controller: _artistCtrl,
-            ),
-            _input(
-              context,
-              label: 'Price',
-              controller: _priceCtrl,
-              keyboardType: TextInputType.number,
-            ),
-
-            const SizedBox(height: 20),
-
-            /// DONE BUTTON
-            SizedBox(
-              width: double.infinity,
-              height: 48,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: context.colors.primary,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
+                  child: Text(
+                    'Cancel',
+                    style: AppText.body(context),
                   ),
                 ),
-             onPressed: () async {
-  final updatedArt = widget.art.copyWith(
-    artname: _nameCtrl.text.trim(),
-    artist: _artistCtrl.text.trim(),
-    price: int.parse(_priceCtrl.text),
-  );
-
-  await widget.onSubmit(updatedArt);
-},
-
-                child: Text(
-                  'Done',
-                  style: AppText.btnMuted(context).copyWith(
-                    color: context.colors.background,),
-                ),
               ),
-            ),
-
-            const SizedBox(height: 10),
-
-            /// CANCEL BUTTON
-            SizedBox(
-              width: double.infinity,
-              height: 48,
-              child: OutlinedButton(
-                style: OutlinedButton.styleFrom(
-                  foregroundColor: context.colors.fontcolor,
-                  side:  BorderSide(color: context.colors.border),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-                onPressed: () => Navigator.pop(context),
-                child: Text(
-                  'Cancel',
-                  style: AppText.body(context),
-                ),
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

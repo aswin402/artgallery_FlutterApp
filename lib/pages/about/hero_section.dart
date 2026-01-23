@@ -67,15 +67,11 @@ class AboutHeroSection extends StatelessWidget {
               AppButton(
                 text: 'Get Started',
                 onPressed: () {},
-                height: 42,
-                width: 150,
                 trailingIcon: Icons.arrow_outward,
               ),
               SecondaryButton(
                 text: 'Explore',
                 onPressed: () {},
-                height: 42,
-                width: 140,
                 trailingIcon: Icons.brush,
               ),
             ],
@@ -89,7 +85,7 @@ class AboutHeroSection extends StatelessWidget {
             child: Image.asset(
               'assets/image1.jpg',
               width: double.infinity,
-              height: 340,
+              height: 300,
               fit: BoxFit.cover,
             ),
           ),

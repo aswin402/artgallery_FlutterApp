@@ -21,8 +21,8 @@ class AppArtCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 340,
-        height: 380,
+        width: 280,
+        height: 340,
         decoration: BoxDecoration(
           color: context.colors.card,
           borderRadius: BorderRadius.circular(20),

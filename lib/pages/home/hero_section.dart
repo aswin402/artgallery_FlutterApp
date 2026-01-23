@@ -11,7 +11,7 @@ class HeroSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
        margin: EdgeInsets.only(top: 160),
-       height: 300,
+       height: 350,
        width: double.infinity,
        color: context.colors.background,
        child: Center(
@@ -47,7 +47,7 @@ class HeroSection extends StatelessWidget {
                 AppButton(
                 text: 'Get Started',
                 onPressed: () {},
-                height: 40,
+                height: 48,
                 width: 140,
                 trailingIcon: Icons.arrow_outward,
                    ),
@@ -57,7 +57,7 @@ class HeroSection extends StatelessWidget {
                 SecondaryButton(
                 text: 'Explore',
                 onPressed: () {},
-                height: 40,
+                height: 48,
                 width: 140,
                 trailingIcon: Icons.brush,
                    ),

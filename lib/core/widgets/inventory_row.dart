@@ -34,14 +34,15 @@ class InventoryRow extends StatelessWidget {
 
           Expanded(
             flex: 3,
-            child: Row(
+            child: Wrap(
+              spacing: 8,
+              runSpacing: 4,
               children: [
                 InventoryActionButton(
                   text: 'Edit',
                   color: context.colors.fontcolor,
                   onTap: onEdit,
                 ),
-                const SizedBox(width: 8),
                 InventoryActionButton(
                   text: 'Delete',
                   color: Colors.redAccent,

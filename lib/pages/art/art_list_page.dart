@@ -39,10 +39,10 @@ class _ArtListPageState extends State<ArtListPage> {
           physics: const NeverScrollableScrollPhysics(),
           padding: const EdgeInsets.all(16),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
+            crossAxisCount: 1,
             crossAxisSpacing: 16,
             mainAxisSpacing: 16,
-            childAspectRatio: 0.7,
+            childAspectRatio: 0.95,
           ),
           itemCount: arts.length,
           itemBuilder: (context, index) {

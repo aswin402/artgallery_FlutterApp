@@ -19,7 +19,7 @@ class AppButton extends StatelessWidget {
     required this.text,
     required this.onPressed,
     this.width,
-    this.height,
+    this.height=48,
     this.padding,
     this.leadingIcon,
     this.trailingIcon,
@@ -96,7 +96,7 @@ class PrimaryButton extends StatelessWidget {
     required this.text,
     required this.onPressed,
     this.width,
-    this.height,
+    this.height=48,
     this.padding,
   });
 
@@ -152,7 +152,7 @@ class SecondaryButton extends StatelessWidget {
     required this.text,
     required this.onPressed,
      this.width,
-    this.height,
+    this.height=48,
     this.padding,
     this.leadingIcon,
     this.trailingIcon,
@@ -232,7 +232,7 @@ class ThirdButton extends StatelessWidget {
     required this.text,
     required this.onPressed,
      this.width,
-    this.height,
+    this.height=48,
     this.padding,
   });
 

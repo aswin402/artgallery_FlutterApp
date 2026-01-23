@@ -17,7 +17,7 @@ class LightTokens {
   static const secondary = Color.fromARGB(255, 25, 25, 25);
   static const secondaryForeground = Color(0xFF1E293B);
 
-  static const muted = Color.fromARGB(255, 66, 67, 68);
+  static const muted = Color.fromARGB(255, 121, 121, 121);
   static const mutedForeground = Color.fromARGB(255, 27, 28, 29);
 
   static const accent = Color(0xFFEFF6FF);

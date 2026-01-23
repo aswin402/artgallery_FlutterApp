@@ -39,7 +39,7 @@ class ArtUploadService {
       );
     }
   
-    final response = await request.send();
+    final response = await request.send().timeout(const Duration(seconds: 30));
   
     if (response.statusCode < 200 || response.statusCode >= 300) {
       throw Exception('Upload failed: ${response.statusCode}');

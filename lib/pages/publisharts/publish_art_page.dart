@@ -62,12 +62,12 @@ class _PublishArtPageState extends State<PublishArtPage> {
 
   @override
   Widget build(BuildContext context) {
-    return  Center(
-        child: Container(
-          margin: EdgeInsets.only(top: 140),
-          width: 380,
-          padding: const EdgeInsets.all(20),
-          decoration: BoxDecoration(
+    return Center(
+      child: Container(
+        margin: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
+        constraints: const BoxConstraints(maxWidth: 500),
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
             color: context.colors.card,
             borderRadius: BorderRadius.circular(20),
             border: Border.all(color: context.colors.border),
