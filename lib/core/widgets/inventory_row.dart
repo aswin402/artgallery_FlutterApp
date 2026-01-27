@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../../api/models/art.dart';
 import '../theme/app_text.dart';
 import '../theme/theme_x.dart';
-import 'inventory_action_button.dart';
 
 class InventoryRow extends StatelessWidget {
   final Art art;
@@ -41,10 +40,12 @@ class InventoryRow extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                InventoryActionButton(
-                  text: 'Edit',
-                  color: context.colors.fontcolor,
-                  onTap: onEdit,
+                IconButton(
+                  onPressed: onEdit,
+                  icon:  Icon(Icons.edit, size: 20, color: context.colors.primary),
+                  padding: EdgeInsets.zero,
+                  constraints: const BoxConstraints(),
+                  visualDensity: VisualDensity.compact,
                 ),
                 const SizedBox(width: 8),
                 IconButton(
