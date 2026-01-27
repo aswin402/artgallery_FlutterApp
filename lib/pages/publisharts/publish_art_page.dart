@@ -51,12 +51,18 @@ class _PublishArtPageState extends State<PublishArtPage> {
       if (!mounted) return;
       AppToast.success(context, 'Art uploaded successfully');
 
-      Navigator.pop(context);
+      setState(() {
+        _loading = false;
+        _image = null;
+        _artNameCtrl.clear();
+        _artistCtrl.clear();
+        _priceCtrl.clear();
+        _descCtrl.clear();
+      });
     } catch (e) {
       if (!mounted) return;
       AppToast.error(context, e.toString());
-    } finally {
-      if (mounted) setState(() => _loading = false);
+      setState(() => _loading = false);
     }
   }
 

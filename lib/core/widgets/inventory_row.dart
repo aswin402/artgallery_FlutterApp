@@ -8,22 +8,26 @@ class InventoryRow extends StatelessWidget {
   final Art art;
   final VoidCallback onEdit;
   final VoidCallback onDelete;
+  final bool isLast;
 
   const InventoryRow({
     super.key,
     required this.art,
     required this.onEdit,
     required this.onDelete,
+    this.isLast = false,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 12),
+      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
       decoration: BoxDecoration(
-        border: Border(
-          bottom: BorderSide(color: context.colors.border),
-        ),
+        border: isLast
+            ? null
+            : Border(
+                bottom: BorderSide(color: context.colors.border),
+              ),
       ),
       child: Row(
         children: [
@@ -34,19 +38,21 @@ class InventoryRow extends StatelessWidget {
 
           Expanded(
             flex: 3,
-            child: Wrap(
-              spacing: 8,
-              runSpacing: 4,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 InventoryActionButton(
                   text: 'Edit',
                   color: context.colors.fontcolor,
                   onTap: onEdit,
                 ),
-                InventoryActionButton(
-                  text: 'Delete',
-                  color: Colors.redAccent,
-                  onTap: onDelete,
+                const SizedBox(width: 8),
+                IconButton(
+                  onPressed: onDelete,
+                  icon: const Icon(Icons.delete_outline, size: 20, color: Colors.redAccent),
+                  padding: EdgeInsets.zero,
+                  constraints: const BoxConstraints(),
+                  visualDensity: VisualDensity.compact,
                 ),
               ],
             ),
@@ -60,11 +66,16 @@ class InventoryRow extends StatelessWidget {
   Widget _cell(BuildContext context, String text, {required int flex}) {
     return Expanded(
       flex: flex,
-      child: Text(
-        text,
-        style: AppText.body(context).copyWith(
-          color: context.colors.fontcolor,),
-        overflow: TextOverflow.ellipsis,
+      child: Padding(
+        padding: const EdgeInsets.only(right: 8),
+        child: Text(
+          text,
+          style: AppText.body(context).copyWith(
+            color: context.colors.fontcolor,
+            fontSize: 13,
+          ),
+          overflow: TextOverflow.ellipsis,
+        ),
       ),
     );
   }

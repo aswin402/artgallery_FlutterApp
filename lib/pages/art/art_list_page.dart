@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../core/widgets/art_card.dart';
 import '../../api/models/art.dart';
 import '../../api/services/art_service.dart';
+import '../../core/widgets/art_card_skeleton.dart';
 
 class ArtListPage extends StatefulWidget {
   const ArtListPage({super.key});
@@ -25,7 +26,19 @@ class _ArtListPageState extends State<ArtListPage> {
       future: artsFuture,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Center(child: CircularProgressIndicator());
+          return GridView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            padding: const EdgeInsets.all(16),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 1,
+              crossAxisSpacing: 16,
+              mainAxisSpacing: 16,
+              childAspectRatio: 0.95,
+            ),
+            itemCount: 4,
+            itemBuilder: (context, index) => const ArtCardSkeleton(),
+          );
         }
 
         if (snapshot.hasError) {

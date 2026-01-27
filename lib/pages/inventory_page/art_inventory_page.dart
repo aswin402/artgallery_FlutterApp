@@ -7,6 +7,7 @@ import '../../core/widgets/app_toast.dart';
 import '../../core/widgets/edit_art_dialog.dart';
 import '../../core/widgets/inventory_row.dart';
 import '../../core/widgets/inventory_search.dart';
+import '../../core/widgets/inventory_skeleton.dart';
 
 class ArtInventoryPage extends StatefulWidget {
   const ArtInventoryPage({super.key});
@@ -92,60 +93,76 @@ class _ArtInventoryPageState extends State<ArtInventoryPage> {
 
           const SizedBox(height: 20),
 
-          /// TABLE HEADER
-          _tableHeader(),
+          /// TABLE CONTAINER
+          Container(
+            decoration: BoxDecoration(
+              color: context.colors.card.withValues(alpha: 0.5),
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(color: context.colors.border),
+            ),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: SizedBox(
+                width: 500, // Fixed width for the table contents
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    /// TABLE HEADER
+                    _tableHeader(),
 
-          const SizedBox(height: 12),
-
-          /// TABLE BODY (FIXED HEIGHT — IMPORTANT)
-          SizedBox(
-            height: 500, // ✅ prevents unbounded height crash
-            child: _loading
-                ? const Center(child: CircularProgressIndicator())
-                : ListView.builder(
-                    itemCount: _filtered.length,
-                    itemBuilder: (_, i) {
-                      final art = _filtered[i];
-                      return InventoryRow(
-                        art: art,
-                    onEdit: () {
-  showDialog(
-    context: context,
-    barrierDismissible: false,
-    builder: (dialogContext) => EditArtDialog(
-      art: art,
-      onSubmit: (updatedArt) async {
-        try {
-          await ArtService.updateArt(updatedArt);
-
-          if (!mounted) return;
-
-          Navigator.of(dialogContext).pop(); // ✅ SAFE
-          AppToast.success(context, 'Art updated successfully');
-          _loadArts(); // refresh list
-        } catch (e) {
-          if (!mounted) return;
-          AppToast.error(context, 'Update failed: $e');
-        }
-      },
-    ),
-  );
-},
-
-                        onDelete: () async {
-                          try {
-                            await ArtService.deleteArt(art.id);
-                            if (!mounted) return;
-                            AppToast.success(context, 'Art deleted successfully');
-                            _loadArts();
-                          } catch (e) {
-                            if (!mounted) return;
-                            AppToast.error(context, 'Delete failed: $e');
-                          }
-                        },
-                      );
-                    },
-                  ),
+                    /// TABLE BODY
+                    SizedBox(
+                      height: 500,
+                      child: _loading
+                          ? const InventorySkeleton()
+                          : ListView.builder(
+                              padding: EdgeInsets.zero,
+                              itemCount: _filtered.length,
+                              itemBuilder: (_, i) {
+                                final art = _filtered[i];
+                                return InventoryRow(
+                                  art: art,
+                                  isLast: i == _filtered.length - 1,
+                                  onEdit: () {
+                                    showDialog(
+                                      context: context,
+                                      barrierDismissible: false,
+                                      builder: (dialogContext) => EditArtDialog(
+                                        art: art,
+                                        onSubmit: (updatedArt) async {
+                                          try {
+                                            await ArtService.updateArt(updatedArt);
+                                            if (!mounted) return;
+                                            Navigator.of(dialogContext).pop();
+                                            AppToast.success(context, 'Art updated successfully');
+                                            _loadArts();
+                                          } catch (e) {
+                                            if (!mounted) return;
+                                            AppToast.error(context, 'Update failed: $e');
+                                          }
+                                        },
+                                      ),
+                                    );
+                                  },
+                                  onDelete: () async {
+                                    try {
+                                      await ArtService.deleteArt(art.id);
+                                      if (!mounted) return;
+                                      AppToast.success(context, 'Art deleted successfully');
+                                      _loadArts();
+                                    } catch (e) {
+                                      if (!mounted) return;
+                                      AppToast.error(context, 'Delete failed: $e');
+                                    }
+                                  },
+                                );
+                              },
+                            ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ),
         ],
       ),
@@ -154,7 +171,7 @@ class _ArtInventoryPageState extends State<ArtInventoryPage> {
 
   Widget _tableHeader() {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 12),
+      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
       decoration: BoxDecoration(
         border: Border(
           bottom: BorderSide(color: context.colors.border),
@@ -183,11 +200,15 @@ class _HeaderCell extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       flex: flex,
-      child: Text(
-        text,
-        style:  TextStyle(
-          color: context.colors.fontcolor,
-          fontWeight: FontWeight.w600,
+      child: Padding(
+        padding: const EdgeInsets.only(right: 8),
+        child: Text(
+          text,
+          style:  TextStyle(
+            color: context.colors.fontcolor,
+            fontWeight: FontWeight.w600,
+            fontSize: 14,
+          ),
         ),
       ),
     );
